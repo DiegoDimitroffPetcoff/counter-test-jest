@@ -1,6 +1,6 @@
 import { useState } from "react";
-export const Counter = () => {
-  const [counter, setCounter] = useState(0);
+export const Counter = ({initialCount}) => {
+  const [counter, setCounter] = useState(initialCount);
 
   function Increment() {
     setCounter((preNumber) => preNumber + 1);
@@ -16,7 +16,7 @@ export const Counter = () => {
   }
   return (
     <div className="App App-header">
-      <header>{counter}</header>
+      <header data-testid="counter">{counter}</header>
       <section>
         <button onClick={Increment}>Increment</button>
         <button onClick={Decrement}>Decrement</button>
